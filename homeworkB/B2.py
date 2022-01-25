@@ -13,7 +13,7 @@ $ python kuku_2.py
 row = (input("行数を入力してください: "))
 column = (input("列数を入力してください: "))
 
-for number in range(1, int(row) + 1):
-    for i in range(1, int(column) + 1):
-        print(number * i, end=" ")
+for result in range(1, int(row) + 1):
+    for result2 in range(1, int(column) + 1):
+        print(result * result2, end=" ")
     print()
