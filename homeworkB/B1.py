@@ -18,4 +18,3 @@ $ python kuku_1.py
 for number in range(1, 10):
     for i in range(1, 10):
         print(number * i, end=" ")
-    print()

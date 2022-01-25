@@ -17,7 +17,11 @@
 1 x 8 =  8 | 2 x 8 = 16 | 3 x 8 = 24 | 4 x 8 = 32 | 5 x 8 = 40 | 6 x 8 = 48 | 7 x 8 = 56 | 8 x 8 = 64 | 9 x 8 = 72 |
 1 x 9 =  9 | 2 x 9 = 18 | 3 x 9 = 27 | 4 x 9 = 36 | 5 x 9 = 45 | 6 x 9 = 54 | 7 x 9 = 63 | 8 x 9 = 72 | 9 x 9 = 81 |
 """
-rou = (input("行数を入力してくだい: "))
+row = (input("行数を入力してくだい: "))
 column = (input("行数を入力してくだい: "))
 
-for
+for result in range(1, int(column) + 1):
+    for result2 in range(1, int(row) + 1):
+        print(f"1 × {column} = {[int(row) + 1] * int(column)} |", end=" ")
+    print()
+# なんとなくわかりそうだけどコードがわかりにくい
