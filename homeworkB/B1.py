@@ -13,7 +13,7 @@ $ python kuku_1.py
 9 18 27 36 45 54 63 72 81
 """
 """
-最後にprintつけたらできた
+最後にprintつけたらなんかできた
 """
 for number in range(1, 10):
     for i in range(1, 10):
