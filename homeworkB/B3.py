@@ -20,8 +20,12 @@
 row = (input("行数を入力してくだい: "))
 column = (input("行数を入力してくだい: "))
 
-for result in range(1, int(column) + 1):
-    for result2 in range(1, int(row) + 1):
-        print(f"1 × {column} = {[int(row) + 1] * int(column)} |", end=" ")
+for result in range(1, int(row) + 1):
+    for result2 in range(1, int(column) + 1):
+        if result * result2 < 10:
+            print(f"{result2} × {result} =  {result * result2} |", end=" ")
+        else:
+            print(f"{result2} × {result} = {result * result2} |", end=" ")
     print()
-# なんとなくわかりそうだけどコードがわかりにくい
+
+# もう少し短くしたい
