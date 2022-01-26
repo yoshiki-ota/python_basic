@@ -14,9 +14,9 @@ def main():
     ]
 
     # Q1. 全国の平均気温を計算してください(9.5となればOK)
-    i.get("temperature")
-    for i in weather_information
-        print(i)
+
+    # for i in weather_information:
+    #    print(i['temperature'] / 8)
     # x = [i.get('temperature') for i in weather_information]
     # print(int(x))
     # print(f'{{x}/ int(len(weather_information))}')
