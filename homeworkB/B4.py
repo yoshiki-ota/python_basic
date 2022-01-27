@@ -14,15 +14,16 @@ def main():
     ]
 
     # Q1. 全国の平均気温を計算してください(9.5となればOK)
+    i = 0
+    for info in weather_information:
+        i = i + info['temperature']
 
-    # for i in weather_information:
-    #    print(i['temperature'] / 8)
-    # x = [i.get('temperature') for i in weather_information]
-    # print(int(x))
-    # print(f'{{x}/ int(len(weather_information))}')
-    # for count in range(1, (len(weather_information))+1):
-    # print(weather_information[count]['temperature'])
+    print(i / len(weather_information))
+
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
+    for info in weather_information:
+        for count in range(3, 5)
+            if info['prefecture'] == '大阪府':
 
     # Q3. 福岡県の平均気温を計算してください(14.0となればOK)
 
