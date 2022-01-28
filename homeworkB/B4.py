@@ -21,11 +21,18 @@ def main():
     print(i / len(weather_information))
 
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
-    for info in weather_information:
-        for count in range(3, 5)
-            if info['prefecture'] == '大阪府':
+    o_station = [os.get('station') for os in weather_information if os['prefecture'] == '大阪府']
+    print(o_station)
 
     # Q3. 福岡県の平均気温を計算してください(14.0となればOK)
+    ft = 0
+    count = 0
+    for n in weather_information:
+        if n['prefecture'] == '福岡県':
+            ft = ft + n['temperature']
+            count += 1  # これで割る
+
+    print(ft / count)
 
 
 if __name__ == '__main__':
