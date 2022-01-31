@@ -48,7 +48,7 @@ print(f"最大値: {date_max()}")
 # def date_max():
 # date_max2 = 0
 """
-# 先生作成
+# 先生作成最大
 numbers_str = "1 1 2 3 5 8 13 21"
 numbers = numbers_str.split(" ")
 
@@ -62,6 +62,19 @@ for numbers in numbers:
         # 入れ替えてしまう↓
         max = int(numbers)
 print(max)
+
+# 先生作成最小
+numbers_str = "5 20 40 30 05 80 13 21"
+numbers = numbers_str.split(" ")
+
+min = int(numbers[0])
+
+for numbers in numbers:
+    # maxと比較して大きかったら↓
+    if int(numbers) < min:
+        # 入れ替えてしまう↓
+        min = int(numbers)
+print(min)
 
 
 # 最小値: 1

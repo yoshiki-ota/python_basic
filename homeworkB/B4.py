@@ -18,8 +18,9 @@ def main():
     for info in weather_information:
         i = i + info['temperature']
 
-    print(i / len(weather_information))
+    i2 = len(weather_information)
 
+    print(i / i2)  # i2の所に直接lenをもってきてもいいかも
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
     o_station = [os.get('station') for os in weather_information if os['prefecture'] == '大阪府']
     print(o_station)

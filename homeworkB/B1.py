@@ -11,9 +11,20 @@ $ python kuku_1.py
 7 14 21 28 35 42 49 56 63
 8 16 24 32 40 48 56 64 72
 9 18 27 36 45 54 63 72 81
-"""
 
+九九の概念
+- 横と縦の席を求める
+- 横の値が変わっていく
+- 縦の値が変わっていく
+
+#自分で作ったやつ
 for number in range(1, 10):
     for i in range(1, 10):
         print(number * i, end=" ")
     print()
+"""
+縦 = 5
+for 縦 in list(range(1, 10)):
+    for 横 in list(range(1, 10)):
+        print(f"{縦 * 横}"., end=" ")
+    print("\n", end="")  # 改行するためにわかりやすく表記
