@@ -1,42 +1,31 @@
-import time
-
-import requests as requests
-import bs4
-
-
-def search_site(base_url, food):
-    response = requests.get(f"{base_url}/search/{food}")
-    html = response.text
-    return html
-
-
-def get_site(base_url, html):
-    soup = bs4.BeautifulSoup(html, 'lxml')
-    recipe_previews = soup.find_all(class_="recipe-preview")
-
-    recipes = []
-    for site_preview in recipe_previews:
-        site_title = site_preview.find(class_="title").text
-        site_url = site_preview.find(class_="title").attrs['href']
-
-        recipes.append({
-            "title": site_title,
-            "url": f"{base_url}{site_url}"})
-    return recipes
+from bs4 import BeautifulSoup
+import urllib.request as req
 
 
 def main():
-    base_url = 'https://news.ycombinator.com/'
-    food = 'トマト'
+    pass
 
-    html = search_site(base_url, food)
-    dummy = get_site(base_url, html)
 
-    for site in dummy:
-        print(f"レシピ名 {site['title']}, URL:{site['url']}")
+# 〇〇〇へアクセス
+url = "https://news.ycombinator.com/"
+res = req.urlopen(url)
 
+soup = BeautifulSoup(res, "html.parser")
+# 　<div class="〇〇〇".....>URLやタイトル名の情報<div>のクラス名を指定
+tags = soup.find_all(class_="title")
+# 　find_allはリスト形式で取得されるので、forで順番に取り出す。
+# 　ポイントは取り出した情報からさらにタグ名を絞ってforで取り出すこと。
+
+
+for tag in tags:
+    # 一つづつ取り出した〇〇〇クラスの中の"a"タグの情報を取得
+    for a in tag.select("a"):
+        # aタグの中の　title="タイトル名"　というようなtitle=のあとの情報を取得する
+        title_name = a.get('title')
+        print(title_name)
+        # aタグの中の　href="リンク先のURL"　というようなhref=のあとの情報を取得する
+        url = a.get('href')
+        print(url)
 
 if __name__ == '__main__':
-    start = time.time()  # 開始時間
     main()
-    print(time.time() - start)  # 終了時間-開始時間＝かかった時間
