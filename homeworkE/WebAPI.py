@@ -20,6 +20,7 @@ time.sleep(1)
 
 def main():
     requests_infomation()
+    time.sleep(1)
 
 
 if __name__ == '__main__':
