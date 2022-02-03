@@ -8,14 +8,13 @@ def requests_infomation():
     json_rest = rest.json()
     json_list = json_rest[0:30]  # 1ページ分表示
     for item in json_list:
+        time.sleep(1)
         try:
             title_info = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{item}.json?print=pretty").json()
             print(f"title : {title_info['title']}, link : {title_info['url']}")
         except KeyError:
             print("エラー箇所")
-
-
-time.sleep(1)
+        time.sleep(1)
 
 
 def main():
